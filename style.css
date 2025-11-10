@@ -11,6 +11,11 @@
   color: red;
 }
 
+#stop-icon {
+  position: relative;
+  top: -1px;
+};
+
 #toolbar {
   background-color: gainsboro;
   height: 21px;
