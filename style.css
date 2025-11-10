@@ -17,6 +17,10 @@
   padding: 4px;
 }
 
+button {
+  height: 100%;
+}
+
 body {
   font-family: sans-serif;
   height: 100%;
