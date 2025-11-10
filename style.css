@@ -1,7 +1,15 @@
-#toolbar {
-  background-color: gainsboro;
+#midi {
+  background-color: darkslategray;
 }
 
-#midi {
-  background-color: dark-slate-gray;
+#play {
+  color: lightgreen;
+}
+
+#stop {
+  color: red;
+}
+
+#toolbar {
+  background-color: gainsboro;
 }
