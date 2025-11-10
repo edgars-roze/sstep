@@ -25,5 +25,6 @@ button {
 body {
   font-family: sans-serif;
   height: 100%;
+  user-select: none;
   zoom: 125%;
 }
