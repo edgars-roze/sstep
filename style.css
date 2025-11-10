@@ -12,6 +12,8 @@
 
 #toolbar {
   background-color: gainsboro;
+  margin-bottom: 8px;
+  padding: 4px;
 }
 
 * {
