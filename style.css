@@ -18,6 +18,9 @@
 
 #toolbar {
   background-color: #ffffff1a;
+  border-color: #ffffff50;
+  border-style: solid;
+  border-width: thin;
   height: 21px;
   margin-bottom: 8px;
   padding: 4px;
@@ -33,6 +36,10 @@ body {
   font-family: sans-serif;
   user-select: none;
   zoom: 125%;
+}
+
+div {
+  border-radius: 3px;
 }
 
 html {
