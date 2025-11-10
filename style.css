@@ -12,4 +12,9 @@
 
 #toolbar {
   background-color: gainsboro;
+  margin: 8px;
+}
+
+* {
+  zoom: 125%;
 }
