@@ -1,7 +1,7 @@
 let bpm = 140;
 const input = document.getElementById("bpm");
 
-function wait(ms) {
+async function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
