@@ -9,7 +9,7 @@ input.addEventListener("input", function() {
   bpm = Number(input.value);
 });
 
-document.getElementById("play").addEventListener("click", function() {
+document.getElementById("play").addEventListener("click", async () => {
   console.log("step");
   await wait(60000 / bpm);
 });
