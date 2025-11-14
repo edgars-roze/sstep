@@ -36,11 +36,13 @@ input_channel.addEventListener("input", function() {
   } else if (channel > 999) {
       input_channel.value = channel = 999;
   }
+
+  /* Load the corresponding file */
+  /* input_sound.value = db[channel]; */
 });
 
 input_sound.addEventListener("input", function() {
-  console.log("File specified"); 
-  console.log(input_sound.value);
+  return;
 });
 
 document.getElementById("play").addEventListener("click", async () => {
