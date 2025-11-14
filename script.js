@@ -1,4 +1,4 @@
-const input = document.getElementById("bpm");
+const input_bpm = document.getElementById("bpm");
 let bpm = 140;
 let on = false;
 let step = 0;
@@ -7,8 +7,8 @@ async function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-input.addEventListener("input", function() {
-  bpm = Number(input.value);
+input_bpm.addEventListener("input", function() {
+  bpm = Number(input_bpm.value);
 });
 
 document.getElementById("play").addEventListener("click", async () => {
