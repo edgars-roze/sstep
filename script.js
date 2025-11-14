@@ -12,12 +12,14 @@ input.addEventListener("input", function() {
 });
 
 document.getElementById("play").addEventListener("click", async () => {
+  if (on) {
+    return;
+  }
+  
   on = true;
-  step = 0;
 
   while (on) {
     console.log(step);
-    
     await wait(60000 / bpm);
 
     if (++step >= 4 * 4 * 4) {
@@ -27,5 +29,9 @@ document.getElementById("play").addEventListener("click", async () => {
 });
 
 document.getElementById("stop").addEventListener("click", function() {
-  on = false;
+  if (on) {  
+    on = false;
+  } else {
+    step = 0;
+  }
 });
