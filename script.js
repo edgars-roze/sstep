@@ -1,5 +1,6 @@
 const input_bpm = document.getElementById("bpm");
 const input_channel = document.getElementById("channel");
+const input_sound = document.getElementById("sound");
 let bpm = 140;
 let channel = 1;
 let on = false;
@@ -35,6 +36,11 @@ input_channel.addEventListener("input", function() {
   } else if (channel > 999) {
       input_channel.value = channel = 999;
   }
+});
+
+input_sound.addEventListener("input", function() {
+  console.log("File specified"); 
+  console.log(input_sound.value);
 });
 
 document.getElementById("play").addEventListener("click", async () => {
