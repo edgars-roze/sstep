@@ -11,7 +11,11 @@ input_bpm.addEventListener("input", function() {
   bpm = Number(input_bpm.value);
   
   if (bpm < 1) {
-      input_bpm.value = bpm = 1;
+      bpm = 1;
+
+      if (input_bpm.value !== "") {
+        input_bpm.value = 1;
+      }
   } else if (bpm > 999) {
       input_bpm.value = bpm = 999;
   }
