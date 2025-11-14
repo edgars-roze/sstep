@@ -1,5 +1,7 @@
 const input_bpm = document.getElementById("bpm");
+const input_channel = document.getElementById("channel");
 let bpm = 140;
+let channel = 1;
 let on = false;
 let step = 0;
 
@@ -18,6 +20,20 @@ input_bpm.addEventListener("input", function() {
       }
   } else if (bpm > 999) {
       input_bpm.value = bpm = 999;
+  }
+});
+
+input_channel.addEventListener("input", function() {
+  channel = Number(input_channel.value);
+  
+  if (channel < 1) {
+      channel = 1;
+
+      if (input_channel.value !== "") {
+        input_channel.value = 1;
+      }
+  } else if (channel > 999) {
+      input_channel.value = channel = 999;
   }
 });
 
