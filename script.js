@@ -9,6 +9,12 @@ async function wait(ms) {
 
 input_bpm.addEventListener("input", function() {
   bpm = Number(input_bpm.value);
+  
+  if (bpm < 1) {
+      input_bpm.value = bpm = 1;
+  } else if (bpm > 999) {
+      input_bpm.value = bpm = 999;
+  }
 });
 
 document.getElementById("play").addEventListener("click", async () => {
