@@ -9,6 +9,10 @@
   font-size: 11px;
 }
 
+#playhead {
+  height: 100%;
+}
+
 #stop {
   color: crimson;
 }
