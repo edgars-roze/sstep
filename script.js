@@ -61,7 +61,7 @@ document.getElementById("play").addEventListener("click", async () => {
     }
 
     div_playhead.style.marginLeft = playhead * 1.5625 + '%';
-    await wait(60000 / bpm);
+    await wait(60000 / bpm / 4);
   }
 });
 
