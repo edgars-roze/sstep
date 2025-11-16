@@ -4,7 +4,7 @@ const input_sound = document.getElementById("sound");
 let bpm = 140;
 let channel = 1;
 let on = false;
-let step = 0;
+let playhead = 0;
 
 async function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -53,11 +53,11 @@ document.getElementById("play").addEventListener("click", async () => {
   on = true;
 
   while (on) {
-    console.log(step);
+    console.log(playhead);
     await wait(60000 / bpm);
 
-    if (++step >= 4 * 4 * 4) {
-      step = 0;
+    if (++playhead >= 4 * 4 * 4) {
+      playhead = 0;
     }
   }
 });
@@ -66,6 +66,6 @@ document.getElementById("stop").addEventListener("click", function() {
   if (on) {  
     on = false;
   } else {
-    step = 0;
+    playhead = 0;
   }
 });
