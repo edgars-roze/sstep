@@ -69,6 +69,6 @@ document.getElementById("stop").addEventListener("click", function() {
   if (on) {  
     on = false;
   } else {
-    playhead = 0;
+    div_playhead.style.marginLeft = playhead = 0;;
   }
 });
