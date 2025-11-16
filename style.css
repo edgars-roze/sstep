@@ -10,10 +10,10 @@
 }
 
 #playhead {
-  border-color: #ffffff50;
+  border-color: #23272a50;
   border-radius: 2px;
   height: 298.1px;
-  weight: 10px;
+  width: 10px;
 }
 
 #stop {
