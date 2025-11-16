@@ -10,7 +10,10 @@
 }
 
 #playhead {
-  height: 100%;
+  border-color: #ffffff50;
+  border-radius: 2px;
+  height: 298.1px;
+  weight: 10px;
 }
 
 #stop {
