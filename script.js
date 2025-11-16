@@ -1,6 +1,9 @@
 const input_bpm = document.getElementById("bpm");
 const input_channel = document.getElementById("channel");
 const input_sound = document.getElementById("sound");
+
+const div_playhead = document.getElementById("playhead");
+
 let bpm = 140;
 let channel = 1;
 let on = false;
@@ -53,12 +56,12 @@ document.getElementById("play").addEventListener("click", async () => {
   on = true;
 
   while (on) {
-    console.log(playhead);
-    await wait(60000 / bpm);
-
     if (++playhead >= 4 * 4 * 4) {
       playhead = 0;
     }
+
+    div_playhead.style.marginLeft = playhead * 1.5625 + '%';
+    await wait(60000 / bpm);
   }
 });
 
