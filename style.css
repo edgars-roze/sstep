@@ -11,8 +11,8 @@
 
 #playhead {
   border-color: #ffffff;
-  border-radius: 2px;
-  height: 298.1px;
+  border-radius: 1px;
+  height: 296px;
   width: 10px;
 }
 
@@ -51,7 +51,7 @@ body {
 div {
   border-radius: 3px;
   border-style: solid;
-  border-width: thin;
+  border-width: 2px;
 }
 
 html {
