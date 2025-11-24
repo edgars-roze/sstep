@@ -16,6 +16,10 @@
   width: 1.5625%;
 }
 
+#sound {
+  display: none;
+}
+
 #stop {
   color: crimson;
 }
