@@ -1,33 +1,13 @@
-/* Indexed DB */
-let db;
-const request = indexedDB.open("sstep", 1);
-
-request.onsuccess = function(event) {
-  db = event.target.result;
-};
-
-request.onerror = function(event) {
-  console.error(event.target.error);
-};
-
-request.onupgradeneeded = function(event) {
-  db = event.target.result;
-  const store = db.createObjectStore("files", {keyPath: "path"});
-};
-
-const input_sound = document.getElementById("sound");
-
-
-/* .......... */
-
 const input_bpm = document.getElementById("bpm");
 const input_channel = document.getElementById("channel");
+const input_sound = document.getElementById("sound");
 const div_playhead = document.getElementById("playhead");
 
 let bpm = 140;
 let channel = 1;
 let on = false;
 let playhead = 0;
+let sounds = [];
 
 async function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -60,12 +40,16 @@ input_channel.addEventListener("input", function() {
       input_channel.value = channel = 999;
   }
 
-  /* Load the corresponding file */
-  /* input_sound.value = db[channel]; */
+  input_sound.value = sounds[channel];
 });
 
-input_sound.addEventListener("input", function() {
-  return;
+input_sound.addEventListener("change", function() {
+  if (!input_sound.files[0]) {
+    return;
+  }
+  
+  sounds[channel] = input_sound.files[0];
+  console.log(sounds);
 });
 
 document.getElementById("play").addEventListener("click", async () => {
