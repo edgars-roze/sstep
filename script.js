@@ -50,6 +50,7 @@ input_sound.addEventListener("change", function() {
   }
   
   sounds[channel] = input_sound.files[0];
+  console.log(sounds);
 });
 
 document.getElementById("play").addEventListener("click", async () => {
