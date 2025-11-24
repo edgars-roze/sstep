@@ -2,6 +2,7 @@ const input_bpm = document.getElementById("bpm");
 const input_channel = document.getElementById("channel");
 const input_sound = document.getElementById("sound");
 const div_playhead = document.getElementById("playhead");
+const p_name = document.getElementById("name");
 
 let bpm = 140;
 let channel = 1;
@@ -40,7 +41,7 @@ input_channel.addEventListener("input", function() {
       input_channel.value = channel = 999;
   }
 
-  input_sound.value = sounds[channel];
+  p_name.textContent = sounds[channel];
 });
 
 input_sound.addEventListener("change", function() {
@@ -49,7 +50,6 @@ input_sound.addEventListener("change", function() {
   }
   
   sounds[channel] = input_sound.files[0];
-  console.log(sounds);
 });
 
 document.getElementById("play").addEventListener("click", async () => {
