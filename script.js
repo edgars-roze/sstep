@@ -1,7 +1,27 @@
-const input_bpm = document.getElementById("bpm");
-const input_channel = document.getElementById("channel");
+/* Indexed DB */
+let db;
+const request = indexedDB.open("sstep", 1);
+
+request.onsuccess = function(event) {
+  db = event.target.result;
+};
+
+request.onerror = function(event) {
+  console.error(event.target.error);
+};
+
+request.onupgradeneeded = function(event) {
+  db = event.target.result;
+  const store = db.createObjectStore("files", {keyPath: "path"});
+};
+
 const input_sound = document.getElementById("sound");
 
+
+/* .......... */
+
+const input_bpm = document.getElementById("bpm");
+const input_channel = document.getElementById("channel");
 const div_playhead = document.getElementById("playhead");
 
 let bpm = 140;
