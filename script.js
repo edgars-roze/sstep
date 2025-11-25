@@ -10,6 +10,8 @@ let on = false;
 let playhead = 0;
 let sounds = [];
 
+let tmp = null;
+
 async function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -56,6 +58,8 @@ input_sound.addEventListener("change", function() {
   sounds[channel] = input_sound.files[0];
   span_name.innerHTML = sounds[channel].name;
   console.log(sounds);
+
+  tmp = new Audio(URL.createObjectURL(file));
 });
 
 document.getElementById("play").addEventListener("click", async () => {
@@ -68,6 +72,10 @@ document.getElementById("play").addEventListener("click", async () => {
   while (on) {
     if (++playhead >= 4 * 4 * 4) {
       playhead = 0;
+    }
+
+    if (tmp) {
+      tmp.play();
     }
 
     div_playhead.style.marginLeft = playhead * 1.5625 + '%';
