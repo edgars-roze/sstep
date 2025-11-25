@@ -59,7 +59,7 @@ input_sound.addEventListener("change", function() {
   span_name.innerHTML = sounds[channel].name;
   console.log(sounds);
 
-  tmp = new Audio(URL.createObjectURL(file));
+  tmp = new Audio(URL.createObjectURL(sounds[channel]));
 });
 
 document.getElementById("play").addEventListener("click", async () => {
