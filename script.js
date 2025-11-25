@@ -2,7 +2,7 @@ const input_bpm = document.getElementById("bpm");
 const input_channel = document.getElementById("channel");
 const input_sound = document.getElementById("sound");
 const div_playhead = document.getElementById("playhead");
-const p_name = document.getElementById("name");
+const span_name = document.getElementById("name");
 
 let bpm = 140;
 let channel = 1;
@@ -41,7 +41,7 @@ input_channel.addEventListener("input", function() {
       input_channel.value = channel = 999;
   }
 
-  p_name.textContent = sounds[channel];
+  span_name.innerHTML = sounds[channel].name;
 });
 
 input_sound.addEventListener("change", function() {
