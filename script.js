@@ -41,7 +41,11 @@ input_channel.addEventListener("input", function() {
       input_channel.value = channel = 999;
   }
 
-  span_name.innerHTML = sounds[channel].name;
+  if (sounds[channel] === undefined) {
+    span_name.innerHTML = "";
+  } else {
+    span_name.innerHTML = sounds[channel].name;
+  }
 });
 
 input_sound.addEventListener("change", function() {
@@ -50,6 +54,7 @@ input_sound.addEventListener("change", function() {
   }
   
   sounds[channel] = input_sound.files[0];
+  span_name.innerHTML = sounds[channel].name;
   console.log(sounds);
 });
 
